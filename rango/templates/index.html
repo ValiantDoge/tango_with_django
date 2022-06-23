@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rango</title>
+</head>
+<body>
+    <body>
+        <h1>Rango says...</h1>
+        <div>hey there partner!</div>
+        <div>
+        {% if categories %}
+        <ul>
+        {% for category in categories %}
+        <li>{{ category.name }}</li>
+        {% endfor %}
+        </ul>
+        {% else %}
+        <strong>There are no categories present.</strong>
+        {% endif %}
+        </div>
+        <div>
+        <a href="/rango/about/">About Rango</a><br />
+        
+        </div>
+    
+</body>
+</html>
