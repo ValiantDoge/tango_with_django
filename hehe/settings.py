@@ -57,16 +57,22 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'hehe.urls'
 
-
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 STATIC_DIR=os.path.join(BASE_DIR, "static")
 
 
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
+
+
+
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
