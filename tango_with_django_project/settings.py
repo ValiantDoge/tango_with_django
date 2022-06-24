@@ -16,6 +16,13 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_DIRS = [STATIC_DIR,]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -27,6 +34,11 @@ SECRET_KEY = 'django-insecure--4^1c80ghw#z^#j9nyf85lspc7dyik7wuq1f4-2@2m#2vq@2fj
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+MEDIA_ROOT = MEDIA_DIR
+
+MEDIA_URL = '/media/'
+
 
 
 # Application definition
@@ -53,7 +65,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'tango_with_django_project.urls'
 
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
 
 TEMPLATES = [
     {
@@ -118,6 +130,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+
+
 
 STATIC_URL = 'static/'
 
