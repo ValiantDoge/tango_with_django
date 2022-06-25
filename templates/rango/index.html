@@ -13,12 +13,26 @@
         <h1 style=color:red;>Rango says...</h1>
         <div>
             hey there partner<br>
-            <strong>{{boldmessage}}</strong><br>
         </div>
+            <div>
+                {% if categories %}
+                <ul>
+                    {% for category in categories %}
+                        <li>
+                            <a href="/rango/category/{{category.slug}}">{{ category.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                    <strong>There are no categories present.</strong>
+                {% endif %}
+            </div>
+        
         <div>
-            <a href="rango/about/">About</a><br>
+            <a href="rango/about/">About Rango</a>
+            <a href="rango/category">Category Page</a><br>
             <img src='{%static "images/image.jpg" %}' alt="image" width="500" height="800">
-            <img src='/media/rango/cat.jpg' alt="image" width="500" height="800">
+            <img src='/media/rango/cat.jpg' alt="image" width="1100" height="800">
         </div>
         
     </body>

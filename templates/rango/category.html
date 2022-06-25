@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+</head>
+<body>
+    <div>
+        {%  if category %}
+            <h1>{{category.name}}</h1>
+            {% if pages%}
+                <ul>
+                    {% for page in pages %}
+                        <li><a href="{{page.url}}">{{page.title}}</a></li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                    <strong>No pages currently in category.</strong>
+                {% endif %}
+        {% else %}
+                The specified category does not exist!
+        {% endif %}
+    </div>
+</body>
+</html>
