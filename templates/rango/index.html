@@ -7,7 +7,7 @@
         <title>Rango</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href='{%static "css/stylesheet.css" %}'>
     </head>
     <body>
         <h1 style=color:red;>Rango says...</h1>
@@ -44,11 +44,14 @@
 
         
         <div>
-            <a href="rango/about/">About Rango</a>
-            <a href="rango/category">Category Page</a><br>
+            <button class="button button1"><a href="rango/about/">About Rango</a></button>
+            <button class="button button2"><a href="/admin/">Admin</a></button>
+            <button class="button button1"><a href="/rango/addcat/">Add Category</a></button><br>
             <img src='{%static "images/image.jpg" %}' alt="image" width="500" height="800">
             <img src='/media/rango/cat.jpg' alt="image" width="1100" height="800">
         </div>
+
+       
         
     </body>
 </html>

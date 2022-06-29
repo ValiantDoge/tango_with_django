@@ -1,0 +1,27 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rango</title>
+</head>
+<body>
+    <h1>Add a Catgory</h1>
+    <div>
+        <form id="category_form" method="post" action="/rango/addcat/">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{hidden}}
+            {% endfor %}
+            {% for field in form.visible_fields %}
+                {{field.errors}}
+                {{field.help_text}}
+                {{field}}
+            {% endfor %}
+            <input type="submit" name="Submit" value="Create Category" />
+        </form>
+    </div>
+</body>
+</html>
