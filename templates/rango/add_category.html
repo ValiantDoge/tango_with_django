@@ -1,26 +1,30 @@
-{% load crispy_forms_tags %}
 <!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{%static "css/stylesheet.css" %}'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Rango</title>
 </head>
 <body>
-    <h1>Add a Catgory</h1>
-    <div>
-        <form id="category_form" method="post" action="/rango/addcat/">
+    
+    <div class="d-flex justify-content-center">
+        
+        <form id="category_form" method="post" action="/rango/addcat/" >
             {% csrf_token %}
+            <h1 style="text-align: center;">Add a Category</h1>
             {% for hidden in form.hidden_fields %}
-                {{hidden}}
+                {{hidden|as_crispy_field}}
             {% endfor %}
             {% for field in form.visible_fields %}
                 {{field.errors}}
-                {{field.help_text}}
-                {{field}}
+                {{field|as_crispy_field}}
             {% endfor %}
-            <input type="submit" name="Submit" value="Create Category" />
+            <input type="submit" name="Submit" value="Create Category" class="btn btn-primary" style="margin-top: 10px;"/>
         </form>
     </div>
 </body>
