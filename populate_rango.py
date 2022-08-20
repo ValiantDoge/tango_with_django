@@ -8,6 +8,8 @@ import django
 django.setup()
 from rango.models import Category, Page
 
+#yes lamo
+
 def populate():
     python_pages = [
         {"title": "Official Python Tutorial",
